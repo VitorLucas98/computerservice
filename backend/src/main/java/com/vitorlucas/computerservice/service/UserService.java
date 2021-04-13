@@ -1,6 +1,7 @@
 package com.vitorlucas.computerservice.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class UserService {
 	public List<UserDTO> findAll(){
 		List<User> list =repository.findAll();
 		return list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+	}
+	
+	@Transactional(readOnly = true)
+	public UserDTO findById(Long id){
+		Optional<User> entity = repository.findById(id);
+		return new UserDTO(entity.get());
 	}
 }
