@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vitorlucas.computerservice.dto.UserDTO;
 import com.vitorlucas.computerservice.entities.User;
 import com.vitorlucas.computerservice.repositories.UserRepository;
+import com.vitorlucas.computerservice.service.exceptions.EntityNotFoundException;
 
 @Service
 public class UserService {
@@ -27,6 +28,7 @@ public class UserService {
 	@Transactional(readOnly = true)
 	public UserDTO findById(Long id){
 		Optional<User> entity = repository.findById(id);
-		return new UserDTO(entity.get());
+		User user = entity.orElseThrow(() ->new EntityNotFoundException("Entity not found"));
+		return new UserDTO(user);
 	}
 }
