@@ -9,4 +9,6 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
 
 
 INSERT INTO tb_client (name, cpf_Cnpj, phone1, phone2) VALUES('Luciano Ferreira', '111.222.333-44', '(61)9 8254-6659', '(61)9 9965-3809');
+INSERT INTO tb_client (name, cpf_Cnpj, phone1, phone2) VALUES('Fernanda Silva', '123.456.789-10', '(61)9 9563-0029', '(61)9 8963-2654');
 INSERT INTO tb_address(city, district, number, cep, complement, cliente_id) VALUES ('Brasília', 'Asa sul', 416, '70297-400', 'apt 205', 1);
+INSERT INTO tb_address(city, district, number, cep, complement, cliente_id) VALUES ('Brasília', 'Asa Norte', 705, '7126-965', 'loja 5', 2);

@@ -88,6 +88,14 @@ public class Address implements Serializable{
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
+	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
 
 	@Override
 	public int hashCode() {

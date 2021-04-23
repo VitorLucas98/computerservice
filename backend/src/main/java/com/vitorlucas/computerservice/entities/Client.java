@@ -28,14 +28,13 @@ public class Client implements Serializable{
 	public Client() {
 	}
 	
-	public Client(Long id, String name, String cpfCnpj, String phone1, String phone2, List<Address> adresses) {
+	public Client(Long id, String name, String cpfCnpj, String phone1, String phone2) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.cpfCnpj = cpfCnpj;
 		this.phone1 = phone1;
 		this.phone2 = phone2;
-		this.adresses = adresses;
 	}
 
 	public Long getId() {
@@ -105,9 +104,5 @@ public class Client implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-
-
-	
-	
+	}	
 }

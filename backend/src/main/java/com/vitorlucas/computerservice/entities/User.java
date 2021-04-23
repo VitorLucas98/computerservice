@@ -74,10 +74,6 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	public Set<Role> getRoles() {
 		return roles;
 	}
