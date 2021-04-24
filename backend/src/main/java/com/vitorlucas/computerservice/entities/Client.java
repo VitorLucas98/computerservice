@@ -25,6 +25,9 @@ public class Client implements Serializable{
 	@OneToMany(mappedBy = "client")
 	private List<Address> adresses = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "client")
+	private List<OrderOfService> serviceOrders = new ArrayList<>();
+	
 	public Client() {
 	}
 	
@@ -79,6 +82,10 @@ public class Client implements Serializable{
 
 	public List<Address> getAdresses() {
 		return adresses;
+	}
+	
+	public List<OrderOfService> getServiceOrders() {
+		return serviceOrders;
 	}
 
 	@Override

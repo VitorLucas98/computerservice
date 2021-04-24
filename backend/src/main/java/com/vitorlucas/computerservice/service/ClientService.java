@@ -34,7 +34,7 @@ public class ClientService {
 	public ClientDTO findById(Long id) {
 		Optional<Client> entity = repository.findById(id);
 		Client client = entity.orElseThrow(() -> new ResourceNotFoundException("id not found"));
-		return new ClientDTO(client, client.getAdresses());
+		return new ClientDTO(client, client.getAdresses(), client.getServiceOrders());
 	}
 
 	@Transactional

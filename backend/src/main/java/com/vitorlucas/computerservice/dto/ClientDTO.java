@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.vitorlucas.computerservice.entities.Address;
 import com.vitorlucas.computerservice.entities.Client;
+import com.vitorlucas.computerservice.entities.OrderOfService;
 
 public class ClientDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -16,6 +17,7 @@ public class ClientDTO implements Serializable{
 	private String phone1;
 	private String phone2;
 	private List<AddressDTO> adresses = new ArrayList<>();
+	private List<OrderOfServiceDTO> serviceOrders = new ArrayList<>();
 	
 	public ClientDTO(){
 	}
@@ -39,6 +41,11 @@ public class ClientDTO implements Serializable{
 	public ClientDTO(Client entity, List<Address> adresses) {
 		this(entity);
 		adresses.forEach(x -> this.adresses.add(new AddressDTO(x)));
+	}
+	public ClientDTO(Client entity, List<Address> adresses, List<OrderOfService> serviceOrders) {
+		this(entity);
+		adresses.forEach(x -> this.adresses.add(new AddressDTO(x)));
+		serviceOrders.forEach(x -> this.serviceOrders.add(new OrderOfServiceDTO(x)));
 	}
 	
 	public Long getId() {
